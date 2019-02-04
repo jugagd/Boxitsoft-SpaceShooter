@@ -18,6 +18,7 @@ public class Pool : MonoBehaviour {
             go = Instantiate(prefab);
         }
         go.SetActive(true);
+        go.transform.parent = this.gameObject.transform;
         go.SendMessage("OutPool", this, SendMessageOptions.DontRequireReceiver);
         return go;
     }

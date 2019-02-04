@@ -7,9 +7,13 @@ public class Bullet : MonoBehaviour
     public float time;
     public float speed;
 
+    public bool PlayerBullet;
+   
+
     public void TimePassed()
     {
         pool.Return(gameObject);
+        CancelInvoke("TimePassed");
     }
     
     public void OutPool(Pool p)

@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : Entity {
-    public Pool bulletPool;
-    public override void testo()
-    {
-        InvokeRepeating("Shoot", 0, 5);
-    }
-
+   
     public override void Movement()
     {
-        
-        transform.Translate (0f,-speed*Input.GetAxis("Horizontal")*Time.deltaTime,0f);
+        transform.Translate (speed*Input.GetAxis("Horizontal")*Time.deltaTime,0f,0f);
     }
-    void Shoot()
+    public override void Shoot()
     {
-        GameObject go = bulletPool.Get();
-        go.transform.position = transform.position;
-        //go.transform.rotation = transform.rotation;
+        base.Shoot();   
+        Bullet bullet = go.GetComponent<Bullet>();
+        bullet.PlayerBullet = true;
+    }
+    private void Update()
+    {        
+        if (Input.GetButtonDown("Fire1"))
+            Shoot();
     }
 }
