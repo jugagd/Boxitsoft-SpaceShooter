@@ -37,6 +37,7 @@ GameObject:
   - component: {fileID: 4632855182603156}
   - component: {fileID: 50649859326117632}
   - component: {fileID: 61910662678300908}
+  - component: {fileID: 114735621700015804}
   m_Layer: 5
   m_Name: StillEnemy
   m_TagString: Enemy
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579404028745526}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: -0.2987808, y: 4.121536, z: 0.8}
+  m_LocalPosition: {x: -0.1, y: 4.195235, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4895488143914652}
@@ -66,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1413231089868264}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.67267203, y: 0.672672, z: 0.672672}
   m_Children: []
   m_Father: {fileID: 4632855182603156}
   m_RootOrder: 0
@@ -116,6 +117,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114735621700015804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579404028745526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3692be9f5d778fe459ac9fd13ef5f2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 3.84
+  speed: 0
+  bulletPool: {fileID: 0}
+  go: {fileID: 0}
 --- !u!212 &212684950136725746
 SpriteRenderer:
   m_ObjectHideFlags: 1

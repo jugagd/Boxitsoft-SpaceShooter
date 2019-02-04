@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Entity {
+public class Enemy : Entity
+{
     SpriteRenderer sR;
-    // Use this for initialization
-    void Start () {
+
+    void Start ()
+    {
         sR = GetComponentInChildren<SpriteRenderer>();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void ReturnColor()
+    {
+        sR.color = Color.white;
+    }
 
     public override void TakeDamage()
     {
         base.TakeDamage();
-        life--;
         if (life>0)
         {
             sR.color = Color.red;
@@ -27,9 +28,5 @@ public class Enemy : Entity {
         {
             sR.color = Color.black;
         }
-    }
-    void ReturnColor()
-    {
-        sR.color = Color.white;
-    }
+    } 
 }
