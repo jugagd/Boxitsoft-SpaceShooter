@@ -10,10 +10,10 @@ public class Entity : MonoBehaviour {
    
     private void FixedUpdate()
     {
-        Movement();
+        Action();
     }
 
-    public virtual void Movement()
+    public virtual void Action()
     {
     }
 

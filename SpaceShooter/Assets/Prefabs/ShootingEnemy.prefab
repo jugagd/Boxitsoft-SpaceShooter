@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4174781290079568}
   - component: {fileID: 50853093209100154}
   - component: {fileID: 61855649759209290}
-  - component: {fileID: 114102979877565500}
+  - component: {fileID: 114894240646847734}
   m_Layer: 5
   m_Name: ShootingEnemy
   m_TagString: Enemy
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1968159921534324}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 3.4410253, y: 1.8487098, z: 0.8}
+  m_LocalPosition: {x: 1.3463346, y: 4.008748, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4191779242947278}
@@ -117,7 +117,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114102979877565500
+--- !u!114 &114894240646847734
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -125,12 +125,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1968159921534324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a63b99e54f1e4468c592865700a577, type: 3}
+  m_Script: {fileID: 11500000, guid: 8730ae98b03483740a1395458b2a5837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  speed: 20
+  life: 10
+  speed: 0
   bulletPool: {fileID: 0}
+  go: {fileID: 0}
+  timeToAction: 2
+  timer: 0
 --- !u!212 &212879914747446022
 SpriteRenderer:
   m_ObjectHideFlags: 1

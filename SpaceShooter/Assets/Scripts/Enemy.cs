@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : Entity
 {
     SpriteRenderer sR;
-
+    public float timeToAction;
+    public float timer;
     void Start ()
     {
         sR = GetComponentInChildren<SpriteRenderer>();
@@ -28,5 +29,7 @@ public class Enemy : Entity
         {
             sR.color = Color.black;
         }
-    } 
+    }
+
+   
 }

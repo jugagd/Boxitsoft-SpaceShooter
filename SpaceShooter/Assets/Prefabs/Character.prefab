@@ -131,6 +131,7 @@ MonoBehaviour:
   life: 0
   speed: 20
   bulletPool: {fileID: 0}
+  go: {fileID: 0}
 --- !u!212 &212895484680201424
 SpriteRenderer:
   m_ObjectHideFlags: 1
