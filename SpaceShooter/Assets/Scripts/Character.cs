@@ -7,6 +7,7 @@ public class Character : Entity
     public override void Action()
     {
         transform.Translate (speed*Input.GetAxis("Horizontal") * Time.deltaTime, 0f, 0f);
+        
     }
 
     public override void Shoot()
@@ -19,11 +20,13 @@ public class Character : Entity
     public override void TakeDamage()
     {
         base.TakeDamage();
+        if (life<=0)
+            Die();
     }
 
     private void Update()
     {        
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire"))
             Shoot();
     }
 }

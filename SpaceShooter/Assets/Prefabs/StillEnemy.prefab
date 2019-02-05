@@ -128,9 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3692be9f5d778fe459ac9fd13ef5f2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3.84
+  life: 2
   speed: 0
-  bulletPool: {fileID: 0}
   go: {fileID: 0}
   timeToAction: 0
   timer: 0

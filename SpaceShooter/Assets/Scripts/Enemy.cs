@@ -7,8 +7,12 @@ public class Enemy : Entity
     SpriteRenderer sR;
     public float timeToAction;
     public float timer;
-    void Start ()
+
+   public override void Start()
+
     {
+        base.Start();
+        transform.parent = GameObject.Find("EnemySpawner").transform;
         sR = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -27,7 +31,9 @@ public class Enemy : Entity
         }
         else
         {
-            sR.color = Color.black;
+            LevelManager.s_Instance.actualScore += 10;
+            LevelManager.s_Instance.enemysAlive--;
+            Die();
         }
     }
 
