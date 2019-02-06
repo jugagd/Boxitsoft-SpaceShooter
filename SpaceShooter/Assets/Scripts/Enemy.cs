@@ -37,5 +37,13 @@ public class Enemy : Entity
         }
     }
 
-   
+    public override void Action()
+    {
+        base.Action();
+        transform.Translate(0f, speed * Time.deltaTime, 0f);
+        if (gameObject.transform.position.y<-6f)
+            transform.Translate(0, -12f, 0);
+    }
+
+
 }

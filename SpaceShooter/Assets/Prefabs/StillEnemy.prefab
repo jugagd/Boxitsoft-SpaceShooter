@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
-  speed: 0
+  speed: 0.1
   go: {fileID: 0}
   timeToAction: 0
   timer: 0

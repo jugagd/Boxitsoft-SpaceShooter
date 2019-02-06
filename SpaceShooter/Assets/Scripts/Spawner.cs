@@ -8,11 +8,11 @@ public class Spawner : MonoBehaviour {
     public int columns;
     public float deltaPosition;
     public GameObject go;
-
+    public float speed;
     float stageWidth;
     float stageHeight;
     Vector3 spawnPosition;
-    
+    int direction=1;
 	void Start ()
     {
         spawnPosition = transform.position;
@@ -28,5 +28,18 @@ public class Spawner : MonoBehaviour {
             spawnPosition.y -= deltaPosition;
             spawnPosition.x = transform.position.x;
         }
+    }
+    private void FixedUpdate()
+    {
+        transform.Translate(direction * speed * Time.deltaTime, 0f, 0f);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Limit")
+        {
+            direction = -direction;
+        }
+
     }
 }
