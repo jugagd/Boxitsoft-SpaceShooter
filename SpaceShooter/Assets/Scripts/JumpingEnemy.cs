@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class JumpingEnemy : Enemy {
     float playerPosition;
-    float originalPosition;
-    float speedX;
+    public float originalPosition;
+    float originalHeight;
     bool jumping;
+    bool returning;
     float delta;
     public override void Start()
     {
         base.Start();
-
-        speedX = speed;
         originalPosition = transform.position.x;
-        Invoke("Jump", timeToAction);
+        originalHeight = transform.position.y;
+        InvokeRepeating("Jump", timeToAction,timeToRecalibrate);
 
     }
     public override void Action()
@@ -22,26 +22,53 @@ public class JumpingEnemy : Enemy {
         base.Action();
         if (jumping)
         {
-            if (delta > 1)
-            {
+            if (delta > speed)
                 transform.Translate(-speed * Time.deltaTime, 0f, 0f);
-                delta = playerPosition - transform.position.x;
-            }
-            else if (delta<-1)
-            {
+            else if (delta<-speed)
                 transform.Translate(speed * Time.deltaTime, 0f, 0f);
-                delta = playerPosition - transform.position.x;
+             transform.Translate(0f, speed * Time.deltaTime, 0f);
+        }
+        if (returning)
+        {
+            if (transform.position.y-originalHeight>=0)
+                transform.Translate(0f, speed * Time.deltaTime, 0f);
+            else
+            {
+                returning = false;
+                InvokeRepeating("Jump", timeToAction, timeToRecalibrate);
             }
-            transform.Translate(0f, speed * Time.deltaTime, 0f);
+            
         }
 
     }
 
     void Jump()
     {
-        playerPosition = LevelManager.s_Instance.playerRef.transform.position.x;
-        jumping = true;
-        delta = playerPosition - originalPosition;
+        GameObject player = LevelManager.s_Instance.playerRef; ;
+        if (player!=null)
+        {
+            playerPosition = player.transform.position.x;            
+            delta = playerPosition - transform.position.x;
+            jumping = true;
+        }
+        
     }
+    public override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);    
+        if (collision.gameObject.name=="Bottom")
+        {
+            CancelInvoke("Jump");
+            jumping = false;
+            ReturnToScreen();
+        }
+    }
+
+    void ReturnToScreen()
+    {
+        transform.position = new Vector3(originalPosition, originalHeight + 4*speed, 0f);
+        returning = true;
+    }
+
     
 }

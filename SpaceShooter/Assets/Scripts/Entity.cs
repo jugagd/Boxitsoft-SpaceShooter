@@ -23,7 +23,7 @@ public class Entity : MonoBehaviour {
     {
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
@@ -31,6 +31,12 @@ public class Entity : MonoBehaviour {
             if ((gameObject.tag == "Player" && !bullet.PlayerBullet) ||
                 (gameObject.tag == "Enemy" && bullet.PlayerBullet))
                 TakeDamage();
+        }
+
+        if ((collision.gameObject.tag=="Enemy"&&gameObject.tag=="Player")||
+            (collision.gameObject.tag=="Player"&&gameObject.tag=="Enemy"))
+        {
+            TakeDamage();
         }
     }
 

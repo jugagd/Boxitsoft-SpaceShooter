@@ -132,7 +132,9 @@ MonoBehaviour:
   speed: 2
   go: {fileID: 0}
   timeToAction: 3
+  timeToRecalibrate: 0.25
   timer: 0
+  originalPosition: 0
 --- !u!212 &212324170802274298
 SpriteRenderer:
   m_ObjectHideFlags: 1

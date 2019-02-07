@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour {
     public Slider volume;
 	void Start ()
     {
-        ShowScore();
+        ShowScore();       
 	}
 
     public void StartButton()
@@ -49,7 +49,11 @@ public class UIManager : MonoBehaviour {
     public void SettingsButton()
     {
         mainButtons.SetActive(false);
-        settingsButtons.SetActive(true);        
+        settingsButtons.SetActive(true);
+        float value;
+        bool result = Settings.s_Instance.mixer.GetFloat("Volume", out value);
+        if (result)
+            volume.value = value;
     }
 
     public void SettingsBack()

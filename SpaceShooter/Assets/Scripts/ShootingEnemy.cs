@@ -2,8 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemy : Enemy {
-
+public class ShootingEnemy : JumpingEnemy
+{
+    public override void Start()
+    {
+        base.Start();
+        originalPosition = transform.position.x;
+        Invoke("Jump", timeToAction);
+    }
     public override void Action()
     {
         base.Action();

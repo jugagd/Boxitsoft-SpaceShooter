@@ -6,7 +6,9 @@ public class Enemy : Entity
 {
     SpriteRenderer sR;
     public float timeToAction;
+    public float timeToRecalibrate;
     public float timer;
+    public float difficulty;
 
    public override void Start()
 

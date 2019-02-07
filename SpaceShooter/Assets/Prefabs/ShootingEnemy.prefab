@@ -128,11 +128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8730ae98b03483740a1395458b2a5837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 10
-  speed: 0
+  life: 2
+  speed: 2
   go: {fileID: 0}
   timeToAction: 2
+  timeToRecalibrate: 0
   timer: 0
+  originalPosition: 0
 --- !u!212 &212879914747446022
 SpriteRenderer:
   m_ObjectHideFlags: 1
