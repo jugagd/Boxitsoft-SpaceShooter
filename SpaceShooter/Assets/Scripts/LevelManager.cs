@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public int enemysAlive;
     public int actualScore=0;
     public int highScore;
-
+    public GameObject playerRef;
     private void Awake()
     {
         //Sets up the singleton instance

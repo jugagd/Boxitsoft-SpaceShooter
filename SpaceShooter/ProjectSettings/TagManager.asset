@@ -8,6 +8,8 @@ TagManager:
   - Undefined
   - Bullet
   - Limit
+  - GameManager
+  - Settings
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour {
     public Text highScoreText;
     int highscore;
-
+    public GameObject mainButtons;
+    public GameObject settingsButtons;
+    public Slider volume;
 	void Start ()
     {
         ShowScore();
@@ -27,12 +29,38 @@ public class UIManager : MonoBehaviour {
         if (PlayerPrefs.HasKey("Highscore"))
             highscore = PlayerPrefs.GetInt("Highscore");
         else
+        {
             highscore = 0;
+            PlayerPrefs.SetInt("Highscore", highscore);
+        }
+            
         highScoreText.text = "Highscore: " + highscore;
     }
-
+    public void EraseScore()
+    {
+        PlayerPrefs.SetInt("Highscore", 0);
+        ShowScore();
+    }
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void SettingsButton()
+    {
+        mainButtons.SetActive(false);
+        settingsButtons.SetActive(true);        
+    }
+
+    public void SettingsBack()
+    {
+        mainButtons.SetActive(true);
+        settingsButtons.SetActive(false);
+    }
+
+    public void VolumeSlider()
+    {
+        float volumeValue = volume.value;
+        Settings.s_Instance.SetVolume(volumeValue);
     }
 }

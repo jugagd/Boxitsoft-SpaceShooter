@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4772436019449614}
   - component: {fileID: 50601882410873850}
   - component: {fileID: 61535024545537270}
-  - component: {fileID: 114094964092881664}
+  - component: {fileID: 114049690777704910}
   m_Layer: 5
   m_Name: Jumping Enemy
   m_TagString: Enemy
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249310643201068}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: -4.295175, y: 3.535275, z: 0.8}
+  m_LocalPosition: {x: -2.5776632, y: 4.1778784, z: 0.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4531849589534166}
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.15, y: 0}
@@ -117,7 +117,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114094964092881664
+--- !u!114 &114049690777704910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -125,12 +125,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1249310643201068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a63b99e54f1e4468c592865700a577, type: 3}
+  m_Script: {fileID: 11500000, guid: 21312fea505b84e4a90809e96de7aed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
-  speed: 20
-  bulletPool: {fileID: 0}
+  life: 2
+  speed: 2
+  go: {fileID: 0}
+  timeToAction: 3
+  timer: 0
 --- !u!212 &212324170802274298
 SpriteRenderer:
   m_ObjectHideFlags: 1
