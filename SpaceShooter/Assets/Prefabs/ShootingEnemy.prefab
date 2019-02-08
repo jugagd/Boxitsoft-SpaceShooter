@@ -131,9 +131,11 @@ MonoBehaviour:
   life: 2
   speed: 2
   go: {fileID: 0}
-  timeToAction: 2
-  timeToRecalibrate: 0
+  timeToAction: 3
+  timeToRecalibrate: 0.25
   timer: 0
+  difficulty: 0
+  scoreValue: 30
   originalPosition: 0
 --- !u!212 &212879914747446022
 SpriteRenderer:

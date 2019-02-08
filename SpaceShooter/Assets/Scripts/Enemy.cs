@@ -9,7 +9,7 @@ public class Enemy : Entity
     public float timeToRecalibrate;
     public float timer;
     public float difficulty;
-
+    public int scoreValue;
    public override void Start()
 
     {
@@ -33,7 +33,7 @@ public class Enemy : Entity
         }
         else
         {
-            LevelManager.s_Instance.actualScore += 10;
+            LevelManager.s_Instance.actualScore += scoreValue;
             LevelManager.s_Instance.enemysAlive--;
             Die();
         }

@@ -25,9 +25,10 @@ public class Character : Entity
     }
 
     private void Update()
-    {        
-        if (Input.GetButtonDown("Fire"))
-            Shoot();
+    {
+        if (Time.timeScale>0)
+            if (Input.GetButtonDown("Fire"))
+                Shoot();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

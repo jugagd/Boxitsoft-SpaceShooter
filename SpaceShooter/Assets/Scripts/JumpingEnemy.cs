@@ -12,8 +12,9 @@ public class JumpingEnemy : Enemy {
     public override void Start()
     {
         base.Start();
-        originalPosition = transform.position.x;
-        originalHeight = transform.position.y;
+        
+        originalPosition = transform.localPosition.x;
+        originalHeight = transform.localPosition.y;
         InvokeRepeating("Jump", timeToAction,timeToRecalibrate);
 
     }
@@ -30,7 +31,7 @@ public class JumpingEnemy : Enemy {
         }
         if (returning)
         {
-            if (transform.position.y-originalHeight>=0)
+            if (transform.localPosition.y-originalHeight>=0)
                 transform.Translate(0f, speed * Time.deltaTime, 0f);
             else
             {
@@ -66,7 +67,7 @@ public class JumpingEnemy : Enemy {
 
     void ReturnToScreen()
     {
-        transform.position = new Vector3(originalPosition, originalHeight + 4*speed, 0f);
+        transform.localPosition = new Vector3(originalPosition, originalHeight + 4*speed, 0f);
         returning = true;
     }
 

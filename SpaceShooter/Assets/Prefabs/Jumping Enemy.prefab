@@ -134,6 +134,8 @@ MonoBehaviour:
   timeToAction: 3
   timeToRecalibrate: 0.25
   timer: 0
+  difficulty: 0
+  scoreValue: 15
   originalPosition: 0
 --- !u!212 &212324170802274298
 SpriteRenderer:

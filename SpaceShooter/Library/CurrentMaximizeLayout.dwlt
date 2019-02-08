@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 5887
+  controlID: 7534
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 5845
+  controlID: 7535
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 5823
+  controlID: 7536
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -204,9 +204,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6e270000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 22e7faff5003fbffccbeffff9efbffff00000000323200005a320000b0320000f064000018650000
+    m_SelectedIDs: 84460000
+    m_LastClickedID: 18052
+    m_ExpandedIDs: fc05feffa8defefff010fffff210ffffce2dffff4042ffff5443ffff6262ffffba6fffff1aa0ffff66e5ffffe8e9ffff5af0ffff7cf6ffff9efbfffff4ffffff00000000663000006a400000c6400000fa40000048460000a8460000fa4f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -225,7 +225,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
-  - MainMenu
+  - Game
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -283,14 +283,14 @@ MonoBehaviour:
     height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 5563.484812219087
+  lastFramingTime: 1288.5955371353932
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.0566435, y: 3.6522136, z: 89.674484}
+    m_Target: {x: -0.7821069, y: -3.8703413, z: -0.07421875}
     speed: 2
-    m_Value: {x: 7.0566435, y: 3.6522136, z: 89.674484}
+    m_Value: {x: -0.7821069, y: -3.8703413, z: -0.07421875}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -318,9 +318,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.2589087
+    m_Target: 17.859613
     speed: 2
-    m_Value: 6.2589087
+    m_Value: 17.859613
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -450,19 +450,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Audio
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Audio
+  - Assets/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Juan\Documents\Git Projects\Unity\Boxitsoft-SpaceShooter\SpaceShooter
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e0270000
-    m_LastClickedID: 10208
-    m_ExpandedIDs: 000000005c270000d22700002a280000fe290000002a000000ca9a3bffffff7f
+    m_SelectedIDs: 72270000
+    m_LastClickedID: 10098
+    m_ExpandedIDs: 000000005c270000d42700002e2800009e290000a029000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -490,7 +490,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c270000d22700002a280000fe290000002a000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000005c270000d42700002e2800009e290000a029000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -515,8 +515,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 6e270000
-    m_LastClickedInstanceID: 10094
+    m_SelectedInstanceIDs: 84460000
+    m_LastClickedInstanceID: 18052
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: d6570000bc95d5ff32280000000000001e2d00002a5b00004c5500007634000058c60000c81f010076b6000054300000a033000064060000ae2f0000a475feff6c270000
     m_RenameOverlay:

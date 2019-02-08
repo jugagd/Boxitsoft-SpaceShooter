@@ -129,10 +129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 2
-  speed: 0.1
+  speed: 0
   go: {fileID: 0}
   timeToAction: 0
+  timeToRecalibrate: 0
   timer: 0
+  difficulty: 0
+  scoreValue: 10
 --- !u!212 &212684950136725746
 SpriteRenderer:
   m_ObjectHideFlags: 1
