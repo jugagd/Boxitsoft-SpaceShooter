@@ -1450,6 +1450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 57976088}
+  actualScore: {fileID: 0}
+  LevelText: {fileID: 0}
   mainButtons: {fileID: 83830953}
   settingsButtons: {fileID: 339195738}
   volume: {fileID: 1811913778}
@@ -2204,7 +2206,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -8,15 +8,24 @@ public class Spawner : MonoBehaviour {
     public int columns;
     public float deltaPosition;
     public GameObject stillEnemy;
-    public GameObject jumpingEnemy;
-    public GameObject shootingEnemy;
+    public GameObject stillShootingEnemy;
+    public GameObject stillShootingSelectiveEnemy;
+    public GameObject jumpingShootingEnemy;
+    public GameObject jumpingShootingSelectiveEnemy;
     public float speed;
     float stageWidth;
     float stageHeight;
     Vector3 spawnPosition;
-    int direction=1;
+    public int direction=1;
+    float probabilityStillEnemy=100f;
+    float probabilityStillShootingEnemy=0f;
+    float probabilityStillShootingSelectiveEnemy=0f;
+    float probabilityjumpingShootingEnemy=0f;
+    float probabilityjumpingShootingSelectiveEnemy=0f;
+    float curveConstant=0.15f;
 
-    
+   
+
     public void Spawn()
     {
         spawnPosition = transform.position;
@@ -26,27 +35,37 @@ public class Spawner : MonoBehaviour {
         {
             for (int columnCounter = 0; columnCounter < columns; columnCounter++)
             {
-                randomNumber = Random.Range(0, (float)LevelManager.s_Instance.levelNumber);
-                Debug.Log(randomNumber);
-                if (randomNumber<=1)
-                {
-                    Instantiate(stillEnemy, spawnPosition, transform.rotation);
-                }
-                else if (randomNumber<=2)
-                {
-                    Instantiate(jumpingEnemy, spawnPosition, transform.rotation);
-                }
-                else
-                {
-                    Instantiate(shootingEnemy, spawnPosition, transform.rotation);
-                }
+                randomNumber = Random.Range(0f, 100f);
                 
+                Debug.Log(probabilityStillEnemy + " " + probabilityStillShootingEnemy);
+                Debug.Log(randomNumber);
+
+                if (randomNumber<=probabilityStillEnemy)
+                    Instantiate(stillEnemy, spawnPosition, transform.rotation);
+                else if (randomNumber<=(probabilityStillEnemy + probabilityStillShootingEnemy))
+                    Instantiate(stillShootingEnemy, spawnPosition, transform.rotation);
+                else if (randomNumber<=(probabilityStillEnemy + probabilityStillShootingEnemy + probabilityStillShootingSelectiveEnemy))
+                    Instantiate(stillShootingSelectiveEnemy, spawnPosition, transform.rotation);
+                else if (randomNumber<=(probabilityStillEnemy + probabilityStillShootingEnemy + probabilityStillShootingSelectiveEnemy + probabilityjumpingShootingEnemy))
+                    Instantiate(jumpingShootingEnemy, spawnPosition, transform.rotation);
+                else if (randomNumber <= (probabilityStillEnemy + probabilityStillShootingEnemy + probabilityStillShootingSelectiveEnemy + probabilityjumpingShootingEnemy + probabilityjumpingShootingSelectiveEnemy))  
+                    Instantiate(jumpingShootingSelectiveEnemy, spawnPosition, transform.rotation);
+
                 LevelManager.s_Instance.enemysAlive++;
                 spawnPosition.x += deltaPosition;                
             }
             spawnPosition.y -= deltaPosition;
             spawnPosition.x = transform.position.x;
         }
+        //progress
+        probabilityjumpingShootingSelectiveEnemy = curveConstant * probabilityjumpingShootingEnemy + probabilityjumpingShootingSelectiveEnemy;
+        probabilityjumpingShootingEnemy = curveConstant * probabilityStillShootingSelectiveEnemy + probabilityjumpingShootingEnemy * (1 - curveConstant);
+        probabilityStillShootingSelectiveEnemy = curveConstant * probabilityStillShootingEnemy + probabilityStillShootingSelectiveEnemy* (1 - curveConstant);
+        probabilityStillShootingEnemy = (curveConstant * probabilityStillEnemy) + probabilityStillShootingEnemy * (1 - curveConstant);
+        probabilityStillEnemy = (1-curveConstant) * probabilityStillEnemy;
+
+    
+
     }
     private void FixedUpdate()
     {
@@ -54,7 +73,6 @@ public class Spawner : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Limit")
         {
             direction = -direction;

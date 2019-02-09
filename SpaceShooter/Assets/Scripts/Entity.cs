@@ -7,12 +7,12 @@ public class Entity : MonoBehaviour {
     public float speed;
     Pool bulletPool;
     Pool explosionPool;
-    public GameObject go;
 
     public virtual void Start()
     {
         bulletPool = GameObject.Find("BulletPool").GetComponent<Pool>();
         explosionPool = GameObject.Find("ExplosionPool").GetComponent<Pool>();
+        life = life * LevelManager.s_Instance.levelNumber;
     }
     private void FixedUpdate()
     {
@@ -42,9 +42,16 @@ public class Entity : MonoBehaviour {
 
     public virtual void Shoot()
     {
-        go = bulletPool.Get();
-        go.transform.position = transform.position;
-        go.transform.rotation = transform.rotation;
+        GameObject bulletGO;
+        bulletGO = bulletPool.Get();
+        bulletGO.transform.position = transform.position;
+        bulletGO.transform.rotation = transform.rotation;
+        Bullet bullet = bulletGO.GetComponent<Bullet>();
+        if (this.gameObject.tag == "Player")
+            bullet.PlayerBullet = true;
+        else
+            bullet.PlayerBullet = false;
+        //Destroy(bulletGO);
     } 
 
     public virtual void TakeDamage()
@@ -54,9 +61,10 @@ public class Entity : MonoBehaviour {
 
     public void Die()
     {
-        go = explosionPool.Get();
-        go.transform.position = transform.position;
-        go.transform.rotation = transform.rotation;
+        GameObject explosionGO;
+        explosionGO = explosionPool.Get();
+        explosionGO.transform.position = transform.position;
+        explosionGO.transform.rotation = transform.rotation;
         Destroy(this.gameObject);
     }
 }

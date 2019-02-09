@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1009458930048510, guid: c8297756a654d17489a63f83bf542085, type: 2}
+  startingPoolItems: 10
 --- !u!4 &180554779
 Transform:
   m_ObjectHideFlags: 0
@@ -674,15 +675,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc254a65c7ab3cc46a3e05cfda51124e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 2
-  columns: 2
+  rows: 3
+  columns: 6
   deltaPosition: 1.5
   stillEnemy: {fileID: 1579404028745526, guid: 3cdfcf2ca10c967489aac012a30bda1f, type: 2}
-  jumpingEnemy: {fileID: 1249310643201068, guid: e800254897e4d29449d5255547ae7e92,
+  stillShootingEnemy: {fileID: 1746863602998024, guid: 22f4ed8e370cf484482410ffb7c17d86,
     type: 2}
-  shootingEnemy: {fileID: 1968159921534324, guid: 84edc35595d025247b96a9f0e0a1d387,
+  stillShootingSelectiveEnemy: {fileID: 1337703134854558, guid: 0e0d93b4a6acff94aa66581850e9dc6a,
     type: 2}
-  speed: 0
+  jumpingShootingEnemy: {fileID: 1249310643201068, guid: e800254897e4d29449d5255547ae7e92,
+    type: 2}
+  jumpingShootingSelectiveEnemy: {fileID: 1968159921534324, guid: 84edc35595d025247b96a9f0e0a1d387,
+    type: 2}
+  speed: 1
+  direction: 1
 --- !u!4 &899998984
 Transform:
   m_ObjectHideFlags: 0
@@ -690,7 +696,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899998982}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -5.5, y: 3.29, z: 0}
+  m_LocalPosition: {x: -3.79, y: 3.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,7 +714,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.396901, y: 1.6153965}
+  m_Offset: {x: -3.8172708, y: 1.6153965}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -719,7 +725,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.234365, y: 4.67136}
+  m_Size: {x: 9.075105, y: 4.67136}
   m_EdgeRadius: 0
 --- !u!50 &899998986
 Rigidbody2D:
@@ -1011,6 +1017,11 @@ Prefab:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 180554778}
+    - target: {fileID: 114929622578866862, guid: 404778eb04eafd8419b46f69d7ec9ee6,
+        type: 2}
+      propertyPath: life
+      value: 1.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 404778eb04eafd8419b46f69d7ec9ee6, type: 2}
   m_IsPrefabParent: 0
@@ -1691,6 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1426543627779302, guid: 5ce8db876b75f244e972f94595eb5469, type: 2}
+  startingPoolItems: 5
 --- !u!4 &1601077733
 Transform:
   m_ObjectHideFlags: 0
