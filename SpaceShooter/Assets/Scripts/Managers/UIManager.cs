@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
+    [Header("Score Texts")]
     public Text highScoreText;
     public Text actualScore;
-    public Text LevelText;
-    int highscore;
+    [Header("Main Menu Texts")]
     public GameObject mainButtons;
     public GameObject settingsButtons;
     public Slider volume;
+    [Header("Gameplay")]
+    public Text LevelText;
+    [Header("Paused and Status Menu")]
+    public GameObject menu;
+    public Text statusText;
+    public Text highscoreAchievedText;
+    private int highscore;
 
     private void Start()
     {
@@ -83,4 +91,30 @@ public class UIManager : MonoBehaviour {
         LevelText.text = "Level: " + levelNumber;
     }
     #endregion
+
+    public void ShowMenu()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            menu.SetActive(false);
+            Cursor.visible = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            menu.SetActive(true);
+            Cursor.visible = true;
+            statusText.text = "Paused";
+            if (LevelManager.s_Instance.playerRef==null)
+            {
+                statusText.text = "You Lost";
+                if (LevelManager.s_Instance.highscoreAchieved)
+                {
+                    highscoreAchievedText.gameObject.SetActive(true);
+                    highscoreAchievedText.text = "Highscore achieved at " + LevelManager.s_Instance.actualScore + " points!";
+                }
+            }
+        }
+    }
 }

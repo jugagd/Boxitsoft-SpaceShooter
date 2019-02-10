@@ -17,7 +17,6 @@ public class JumpingEnemy : ShootingEnemy {
         
         originalPosition = transform.localPosition.x;
         originalHeight = transform.localPosition.y;
-        //InvokeRepeating("Jump", timeToAction,timeToRecalibrate);
         Invoke("Jump", timeToAction);
         spawnerRef = GameObject.Find("EnemySpawner").GetComponent<Spawner>();
         speed = spawnerRef.speed;
@@ -38,7 +37,6 @@ public class JumpingEnemy : ShootingEnemy {
             else
             {
                 returning = false;
-                //InvokeRepeating("Jump", timeToAction, timeToRecalibrate);
                 Invoke("Jump", timeToAction);
             }
         }
@@ -49,19 +47,13 @@ public class JumpingEnemy : ShootingEnemy {
     {
         GameObject player = LevelManager.s_Instance.playerRef;
         if (player!=null)
-        {/*
-            playerPosition = player.transform.position.x;            
-            delta = playerPosition - transform.position.x;*/
-            jumping = true;
-        }
-        
+            jumping = true;        
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);    
         if (collision.gameObject.name=="Bottom")
         {
-            //CancelInvoke("Jump");
             jumping = false;
             ReturnToScreen();
         }

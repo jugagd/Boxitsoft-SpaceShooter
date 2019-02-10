@@ -28,7 +28,6 @@ public class Pool : MonoBehaviour
             go = Instantiate(prefab);
         }
         go.SetActive(true);
-        //go.transform.parent = this.gameObject.transform;
         return go;
     }
 

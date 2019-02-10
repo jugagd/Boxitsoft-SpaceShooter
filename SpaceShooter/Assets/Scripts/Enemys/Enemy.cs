@@ -11,10 +11,12 @@ public class Enemy : Entity
     public float difficulty;
     public int scoreValue;
     Color originalColor;
+
    public override void Start()
 
     {
         base.Start();
+        life = life * LevelManager.s_Instance.levelNumber;
         transform.parent = GameObject.Find("EnemySpawner").transform;
         sR = GetComponentInChildren<SpriteRenderer>();
         originalColor = sR.color;
@@ -32,6 +34,7 @@ public class Enemy : Entity
         base.TakeDamage();
         if (life>=0.5f)
         {
+            //Changing color for feedback.
             sR.color = Color.red;
             Invoke("ReturnColor", 0.25f);
         }

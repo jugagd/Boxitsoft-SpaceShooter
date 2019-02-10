@@ -9,14 +9,15 @@ public class LevelManager : MonoBehaviour
     [Header("Score Values")] 
     public int actualScore = 0;
     public int highScore;
+    public bool highscoreAchieved = false;
     [Header("Level Values")]
     public int enemysAlive;
     public int levelNumber;
     public Spawner spawner;
     [Header("Player Reference")]
     public GameObject playerRef;
+    bool playerAlive = true;
     [Header("UI")]
-    public GameObject menu;
     UIManager uiManager;
 
     private void Awake()
@@ -44,16 +45,30 @@ public class LevelManager : MonoBehaviour
         {
             highScore = actualScore;
             PlayerPrefs.SetInt("Highscore", highScore);
+            highscoreAchieved = true;
         }
         uiManager.ShowScore(actualScore);
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel")&&playerAlive)
         {
-            Menu();
+            ShowMenuUI();
         }
         if (enemysAlive == 0)
         {
             Invoke("NewLevel", 2f);
         }
+        if (playerAlive)
+        {
+            if (playerRef==null)
+            {
+                playerAlive = false;
+                Invoke("ShowMenuUI",2f);
+            }
+        }
+    }
+
+    void ShowMenuUI()
+    {
+        uiManager.ShowMenu();
     }
     public void NewLevel()
     {
@@ -68,21 +83,6 @@ public class LevelManager : MonoBehaviour
         }
         spawner.Spawn();
     }
-
-    void Menu()
-    {
-        if (Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-            menu.SetActive(false);
-            Cursor.visible = false;
-        }
-        else
-        {
-            Time.timeScale = 0;
-            menu.SetActive(true);
-            Cursor.visible = true;
-        }
-    }
+    
     
 }

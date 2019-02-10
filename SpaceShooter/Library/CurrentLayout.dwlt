@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 52
+  controlID: 135
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 53
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 54
+  controlID: 71
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -202,8 +202,8 @@ MonoBehaviour:
     y: 0
     width: 256
     height: 357
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -228,8 +228,8 @@ MonoBehaviour:
     y: 0
     width: 576
     height: 357
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -398,7 +398,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: d871ffffaa72ffffc473ffffcc73ffffd493ffff9c94ffffba95ffffc695ffff1cb5ffff44b9ffff9efbffff00000000
+    m_ExpandedIDs: 5c5efdff2a5ffdff4860fdff5460fdffa01dfeff805bfeff9c36ffff9e36ffff789fffff9aa9ffff48e8ffff90eaffff4ef3ffff5ef5ffff00000000a4310000ae310000e6410000c4420000fa430000d8440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -449,14 +449,14 @@ MonoBehaviour:
     height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 1288.5955371353932
+  lastFramingTime: 449.014191142024
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1934947, y: -2.8478317, z: -0.07422875}
+    m_Target: {x: -0.17575875, y: -1.1946259, z: -0.078224555}
     speed: 2
-    m_Value: {x: -1.1934947, y: -2.8478317, z: -0.07422875}
+    m_Value: {x: -0.17575875, y: -1.1946259, z: -0.078224555}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -484,9 +484,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 17.927982
+    m_Target: 7.645081
     speed: 2
-    m_Value: 17.927982
+    m_Value: 7.645081
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -564,19 +564,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Scripts/Enemys
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/Enemys
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\Juan\Documents\Git Projects\Unity\Boxitsoft-SpaceShooter\SpaceShooter
+  m_LastProjectPath: C:\Users\Juan\Documents\Git Projects\Unity\Boxitsoft-SpaceShooter\SpaceShooter\Project
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 15}
-    m_SelectedIDs: 1c280000
-    m_LastClickedID: 10268
-    m_ExpandedIDs: 000000005e27000074270000dc2700001c2800003c280000002a0000022a000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 742b0000
+    m_LastClickedID: 11124
+    m_ExpandedIDs: 182b00008a2b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -604,7 +604,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e27000074270000dc2700001c2800003c280000002a0000022a0000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

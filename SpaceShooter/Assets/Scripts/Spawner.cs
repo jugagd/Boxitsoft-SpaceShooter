@@ -7,16 +7,21 @@ public class Spawner : MonoBehaviour {
     public int rows;
     public int columns;
     public float deltaPosition;
+    [Header("Kinds of enemys")]
     public GameObject stillEnemy;
     public GameObject stillShootingEnemy;
     public GameObject stillShootingSelectiveEnemy;
     public GameObject jumpingShootingEnemy;
     public GameObject jumpingShootingSelectiveEnemy;
+    [Header("Movement of enemy group")]
     public float speed;
+    public int direction = 1;
+    //Position of enemys to spawn.
     float stageWidth;
     float stageHeight;
     Vector3 spawnPosition;
-    public int direction=1;
+    
+    //Probability of spawn different enemys.
     float probabilityStillEnemy=100f;
     float probabilityStillShootingEnemy=0f;
     float probabilityStillShootingSelectiveEnemy=0f;
@@ -35,11 +40,8 @@ public class Spawner : MonoBehaviour {
         {
             for (int columnCounter = 0; columnCounter < columns; columnCounter++)
             {
-                randomNumber = Random.Range(0f, 100f);
-                
-                Debug.Log(probabilityStillEnemy + " " + probabilityStillShootingEnemy);
-                Debug.Log(randomNumber);
-
+                randomNumber = Random.Range(0f, 100f);                
+                //Choosing enemy based on it's probability.
                 if (randomNumber<=probabilityStillEnemy)
                     Instantiate(stillEnemy, spawnPosition, transform.rotation);
                 else if (randomNumber<=(probabilityStillEnemy + probabilityStillShootingEnemy))
@@ -57,7 +59,7 @@ public class Spawner : MonoBehaviour {
             spawnPosition.y -= deltaPosition;
             spawnPosition.x = transform.position.x;
         }
-        //progress
+        //Probability math.
         probabilityjumpingShootingSelectiveEnemy = curveConstant * probabilityjumpingShootingEnemy + probabilityjumpingShootingSelectiveEnemy;
         probabilityjumpingShootingEnemy = curveConstant * probabilityStillShootingSelectiveEnemy + probabilityjumpingShootingEnemy * (1 - curveConstant);
         probabilityStillShootingSelectiveEnemy = curveConstant * probabilityStillShootingEnemy + probabilityStillShootingSelectiveEnemy* (1 - curveConstant);
